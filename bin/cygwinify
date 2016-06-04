@@ -1,0 +1,61 @@
+#!/usr/bin/sh
+# ****************************************************
+#
+#   cygwinify
+#
+#   Take any cygwin path and transform them into windows path
+#   to be used by a windows app in a cygwin terminal
+#   Inspired by https://noamlewis.wordpress.com/2011/03/22/how-to-run-any-windows-program-from-cygwin-still-using-cygwin-style-path/
+#
+# ----------------------------------------------------
+#   Dependencies
+# ----------------------------------------------------
+#
+#   cygpath
+#
+# ----------------------------------------------------
+#   Usage
+# ----------------------------------------------------
+#
+#   cygwinify ARG
+#
+#   WINAPP 'cygwinify ARG'
+#
+#   where
+#     ARG is path to a file and/or other arguments such as switches
+#     WINAPP is path to windows executable 
+#
+# ****************************************************
+
+# Error handling
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# ----------------------------------------------------
+#   Functions
+# ----------------------------------------------------
+
+cygwinify() {
+RESULT=""
+for arg; do
+  if [[ "" != "$arg" ]] && [[ -e $arg ]]; then
+    OUT=`cygpath -wla $arg`
+  else
+    if [[ $arg == -* ]]; then
+      OUT=$arg
+    else
+      OUT="'$arg'"
+    fi
+  fi
+  RESULT=$RESULT$OUT" "
+done
+echo "$RESULT"
+}
+
+# ----------------------------------------------------
+#   Main
+# ----------------------------------------------------
+
+cygwinify "$@"  
