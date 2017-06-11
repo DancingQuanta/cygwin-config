@@ -1,0 +1,9 @@
+#/usr/bin/sh
+# Copies to or from windows clipboard
+# Credits http://williammitchell.blogspot.co.uk/2008/03/fun-with-cygwins-devclipboard.html
+if isatty 0
+then
+   cat /dev/clipboard
+else
+   cat >/dev/clipboard
+fi
