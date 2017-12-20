@@ -4,4 +4,4 @@
 !/.local/bin/cygwinify
 !/.local/bin/cb
 !/.gitignore.d/
-!/.gitignore.d/cygwin
+!/.gitignore.d/cygwin-config
