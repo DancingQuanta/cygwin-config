@@ -1,0 +1,8 @@
+## DancingQuanta/cygwin-config - https://github.com/DancingQuanta/cygwin-config
+## cygwin-config.vcsh
+## Setup DancingQuanta/cygwin-config and dependant repositories
+
+### MAIN REPOSITORY - cloned via vcsh
+
+[$HOME/.config/vcsh/repo.d/cygwin-config.git]
+checkout = vcsh clone https://github.com/DancingQuanta/cygwin-config
