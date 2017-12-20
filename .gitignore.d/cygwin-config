@@ -1,4 +1,8 @@
 *
+!/.config/
+!/.config/shell/
+!/.config/shell/config-local.d/
+!/.config/shell/config-local.d/cygwin.sh
 !/.local/
 !/.local/bin/
 !/.local/bin/cygwinify
