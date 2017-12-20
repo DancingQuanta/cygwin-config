@@ -1,5 +1,7 @@
 *
-!/bin/
-!/bin/cygwinify
+!/.local/
+!/.local/bin/
+!/.local/bin/cygwinify
+!/.local/bin/cb
 !/.gitignore.d/
 !/.gitignore.d/cygwin
