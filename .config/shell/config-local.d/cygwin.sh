@@ -12,7 +12,7 @@ open() {
 }
 
 cpath() {
-  printf "%s" $(cygpath -wa "$1") > /dev/clipboard
+  printf "%s" "$(cygpath -wa "$1")" > /dev/clipboard
 }
 
 # Manage cygwin programs
